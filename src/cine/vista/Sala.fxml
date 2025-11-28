@@ -25,7 +25,7 @@
             </center>
             <right>
                 <HBox spacing="10" style="-fx-padding:10;">
-                    <Label fx:id="infoSala" text="Seleccione una sala" style="-fx-text-fill: white;"/>
+                    <Label fx:id="infoSala" text="Seleccione una sala" style="-fx-text-fill: white; -fx-font-size: 18px;"/>
                 </HBox>
             </right>
             <bottom>

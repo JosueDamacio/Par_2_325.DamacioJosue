@@ -12,8 +12,9 @@ import javafx.stage.WindowEvent;
 
 public class Ejecutador extends Application {
 
-    public static final String ROOT_NAME = "root";
-    public static final String ROOT_EMAIL = "root@local";
+    
+    public static final String ROOT_NAME = "admin";
+    public static final String ROOT_EMAIL = "admin@admin";
     public static final String ROOT_PASSWORD = "1234";
 
     private static Stage primaryStage;

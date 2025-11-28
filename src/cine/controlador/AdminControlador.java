@@ -44,7 +44,7 @@ public class AdminControlador {
 
         if (colNombre != null) colNombre.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getCompradorNombre()));
         if (colCantidad != null) colCantidad.setCellValueFactory(c -> new SimpleStringProperty(Integer.toString(c.getValue().getCantidadEntradas())));
-        if (colPelicula != null) colPelicula.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getNombrePelicula()));
+        if (colPelicula != null) colPelicula.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getPeliculaTitulo()));
         NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("es", "AR"));
         if (colValor != null) colValor.setCellValueFactory(c -> new SimpleStringProperty(nf.format(c.getValue().getPrecioTotal())));
 

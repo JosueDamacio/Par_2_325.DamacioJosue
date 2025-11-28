@@ -26,9 +26,4 @@ public class EntradaModelo implements Serializable {
     public List<ButacaModelo> getButacasCompradas() { return butacasCompradas; }
     public int getCantidadEntradas() { return butacasCompradas.size(); }
     public double getPrecioTotal() { return precioTotal; }
-
-    // alias utilizados en distintas vistas
-    public String getNombreCliente() { return getCompradorNombre(); }
-    public String getNombrePelicula() { return getPeliculaTitulo(); }
-    public double getValorTotal() { return getPrecioTotal(); }
 }
