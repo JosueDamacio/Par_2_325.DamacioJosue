@@ -15,27 +15,9 @@ public class CineModelo implements Serializable {
     private final List<ClienteModelo> clientes = new ArrayList<>();
 
     public CineModelo() {
+        //se crea un usuario root en caso de no existir
         if (buscarClientePorEmail(Ejecutador.ROOT_EMAIL) == null) {
             clientes.add(new ClienteModelo(Ejecutador.ROOT_NAME, Ejecutador.ROOT_EMAIL, Ejecutador.ROOT_PASSWORD, true));
-        }
-        if (salas.isEmpty()) {
-            SalaModelo s1 = new SalaModelo("estandar");
-            s1.setTituloPelicula("Cars 5");
-            s1.set3D(false);
-            s1.setPrecioPelicula(3000.0);
-            salas.add(s1);
-
-            SalaModelo s2 = new SalaModelo("estandar");
-            s2.setTituloPelicula("Rock 4");
-            s2.set3D(false);
-            s2.setPrecioPelicula(4500.0);
-            salas.add(s2);
-
-            SalaModelo s3 = new SalaModelo("grande");
-            s3.setTituloPelicula("Homo Argentum");
-            s3.set3D(true);
-            s3.setPrecioPelicula(5300.0);
-            salas.add(s3);
         }
     }
 

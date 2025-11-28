@@ -18,20 +18,29 @@ public class Ejecutador extends Application {
     public static final String ROOT_PASSWORD = "1234";
 
     private static Stage primaryStage;
-    private static CineModelo modelo;
+    private static CineModelo cineModelo;
 
     @Override
     public void start(Stage stage) {
         primaryStage = stage;
-        modelo = PersistenciaDatos.cargar();
-        if (modelo == null) {
-            modelo = new CineModelo();
+        cineModelo = PersistenciaDatos.cargar();
+        if (cineModelo == null) {
+            cineModelo = new CineModelo();
         }
-        showMenu(stage, modelo);
+
+        //se crean las salas por defecto si no existen
+        if (cineModelo.getSalas() == null || cineModelo.getSalas().isEmpty()) {
+            cineModelo.crearSala("estandar", "Cars 5", false, 3000.0);
+            cineModelo.crearSala("estandar", "Rock 4", false, 4500.0);
+            cineModelo.crearSala("grande", "Homo Argentum", true, 5300.0);
+            PersistenciaDatos.guardar(cineModelo);
+        }
+
+        showMenu(stage, cineModelo);
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
-                PersistenciaDatos.guardar(modelo);
+                PersistenciaDatos.guardar(cineModelo);
             }
         });
         stage.show();
@@ -60,8 +69,8 @@ public class Ejecutador extends Application {
         }
     }
 
-    public static CineModelo getModelo() {
-        return modelo;
+    public static CineModelo getCineModelo() {
+        return cineModelo;
     }
 
     public static Stage getPrimaryStage() {

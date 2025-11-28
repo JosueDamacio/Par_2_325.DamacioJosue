@@ -77,7 +77,7 @@ public class SalaControlador {
                                 setText(item.getListadoParaSeleccion());
                                 setFont(Font.font(20));
                                 setTextFill(Color.WHITE);
-                                setStyle("-fx-background-color: transparent;");
+                                setStyle("");
                             }
                         }
                     };
